@@ -1,7 +1,7 @@
 # Cloud-Based Security Monitoring with Microsoft Azure
 
 ## Project Overview
-This project sets up a basic home SOC in **Microsoft Azure** from scratch. Using a free Azure subscription, we create a **Virtual Machine (VM)**, expose it as a honeypot, and forward logs to a central repository. We then integrate **Microsoft Sentinel** to analyze real-world attack data, providing hands-on experience in **cloud security monitoring**, **threat detection**, and **SOC operations**.
+This project sets up a basic home SOC in **Microsoft Azure** from scratch. Using a free Azure subscription, we create a **Virtual Machine (VM)**, expose it as a honeypot, and forward logs to a central repository. We then integrate **Microsoft Sentinel** to analyse real-world attack data, providing hands-on experience in **cloud security monitoring**, **threat detection**, and **SOC operations**.
 
 ## Key Features
 - Set up a **free Azure subscription** and deployed a **Virtual Machine**.
