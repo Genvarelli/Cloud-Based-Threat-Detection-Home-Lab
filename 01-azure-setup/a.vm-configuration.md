@@ -20,9 +20,15 @@
 
 3. **Create a Virtual Machine:**
    - Inside the Resource Group, click **Add** and search for **Virtual Machine**.
-   - Select the desired image (e.g., **Windows Server 2022** or **Ubuntu Server 20.04**).
-   - Configure the VM with at least 2 GB of RAM, 20 GB of storage, and a public IP address.
-   - Under **Networking**, ensure the VM is attached to the previously created virtual network (`AttackSim-VNet`).
+   - Click **Create** then select **Azure Virtual Machine**.
+   - Select the **Resource Groups** you made.
+   - Name your virtual machine (e.g., `GENESYS-NET-1`) and select the same region as your resource group.
+   - Select the **Windows 10** as your desired image.
+   - Create an Administrator Account
+   - Tick the the Licensing Box.
+   - Click **Next: Disks**.
+   - You can leave the OS disk size as the default 127 GIB.
+   - Click **Next: Networking**
    - Complete the setup and click **Review + Create**.
 
 4. **Log into the Virtual Machine:**
