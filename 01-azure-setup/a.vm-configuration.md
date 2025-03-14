@@ -16,7 +16,7 @@
    - Inside the Resource Group, click **Add** and search for **Virtual Network**.
    - Name your virtual network (e.g., `AttackSim-VNet`) and select the same region as your resource group.
    - You can leave it as it is, your address space will be created by default (e.g., `10.0.0.0/24`).
-   - Click **Review + Create**.
+   - Click **Review + Create** and then **Create**..
 
 3. **Create a Virtual Machine:**
    - Inside the Resource Group, click **Add** and search for **Virtual Machine**.
