@@ -24,7 +24,7 @@ This project sets up a basic home SOC in **Microsoft Azure** from scratch. Using
 - **Inspecting Enriched Logs & Attack Sources**: [Analysis](02-log-analysis/d.attack-source-analysis.md)
 
 ### Phase 3: Threat Detection & Incident Response
-- **Creating an Attack Map**: [Visualization](03-threat-detection/a.attack-map.md)
+- **Creating an Attack Map**: [Visualisation](03-threat-detection/a.attack-map.md)
 - **Generating & Handling Incidents in Sentinel**: [Incident Response](03-threat-detection/b.incident-creation.md)
 
 ## Resources
