@@ -18,72 +18,10 @@ Follow these steps to download and import geolocation data into Microsoft Sentin
 5. Click **Browse for files** and select the CSV file you downloaded earlier (e.g., `geolite2-country-ipv4.csv`).
 6. Choose **Network** as the **SearchKey**.
 7. Click **Review and Create**, then click **Create** again.
-8. Wait for the data to populate, as it may take some time to appear.
+8. Allow the watchlist to fully import, there should be a total of roughly 20,000 rows.
 
----
-
-## KQL Queries for Geolocation Data
-
-### Retrieve All Geolocation Data
-
-```kql
-Geolite2
-| take 100
-```
-
-### Search for a Specific IP Address
-
-```kql
-Geolite2
-| where Network == "192.168.1.1"
-```
-
-### Find Geolocation Data for IP Ranges
-
-```kql
-Geolite2
-| where Network startswith "192.168."
-```
-
-### Get Geolocation Data for a Specific Country
-
-```kql
-Geolite2
-| where Country == "United Kingdom"
-```
-
-### Join Geolocation Data with Sign-in Logs
-
-```kql
-SigninLogs
-| join kind=inner (Geolite2) on $left.IPAddress == $right.Network
-| project IPAddress, Country, Region, City, UserPrincipalName, TimeGenerated
-```
-
-### Identify Unauthorised Access from High-Risk Countries
-
-```kql
-SigninLogs
-| join kind=inner (Geolite2) on $left.IPAddress == $right.Network
-| where Country in ("Russia", "China", "Iran", "North Korea")
-| project IPAddress, Country, UserPrincipalName, TimeGenerated
-```
-
-### Visualise Geolocation Data
-
-```kql
-Geolite2
-| summarize Count = count() by Country
-| sort by Count desc
-```
-
----
 
 ## Notes
+In real life, this location data would come from a live source or it would be updated automatically on the back end by your service provider.
 
-- Replace `Geolite2` with the actual watchlist name if different.
-- Modify queries based on the structure of the imported CSV file.
-- Use filtering to refine searches based on specific requirements.
-
-This guide ensures you can efficiently import and query geolocation data in **Microsoft Sentinel** using **KQL**.
-
+---
