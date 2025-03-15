@@ -37,7 +37,7 @@ This guide explains how to use KQL (Kusto Query Language) to query logs in Azure
 
 6. **Experiment with KQL Queries**  
    - Feel free to experiment with KQL codes to filter and find the information you need.
-   - For more advanced KQL usage, check out the free resource: [KC7 Cyber KQL Modules](https://kc7cyber.com/modules).
+   - For more advanced KQL usage, check out the free resource: [Tutorial: Learn common Kusto Query Language operators]([com/en-us/kusto/query/tutorials/learn-common-operators?view=microsoft-fabric]).
 
 ---
 
