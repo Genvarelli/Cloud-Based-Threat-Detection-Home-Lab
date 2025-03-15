@@ -34,19 +34,19 @@
    - in **Next: Monitoring** diable the **Boot diagnostics**.
    - Click **Review + Create** and then **Create**..
 
-4. **Log into the Virtual Machine:**
-   - After the VM is deployed, log into it via **RDP** (for Windows) or **SSH** (for Linux).
-   - Turn off the firewall inside the virtual machine (for Windows: `netsh advfirewall set allprofiles state off`; for Linux: `sudo ufw disable`).
-   - This makes the VM more enticing to attackers on the public internet.
+4. **Create a Network Security Group (NSG):**
+   -  - Inside your Resource Group, Edit your network security group
+   - Delete the **RDP** from the **Inbound Security rules**.
+   - Click Settings, click Inbound Security Rules and Click **ADD** Inbound Security Rules.
+   - Set **Source** to **Any**, **Source Port Range** to ***Any***, **Destination** to **Any**, **Destination Port Range** to ***Any***, and **Protocol** to **Any**.
+   - Allow all traffic by setting **Action** to **Allow**.
+   - Name the rule **'DANGER_AllowAnyCustomAnyInbound'** and **ADD**.
+   - 
+5. **Log into the Virtual Machine:**
+   - Copy your Virtual Public IP Address from the Virtual machines and paste your IP Address into **Remote Desktop Connection** on Windows.
+   - Click **Connect**, Login with the **Administrator Username** and password you created.
 
-5. **Create a Network Security Group (NSG):**
-   - Inside your Resource Group, click **Add** and search for **Network Security Group**.
-   - Name your NSG (e.g., `AttackSim-NSG`) and click **Review + Create**.
-   - Once created, go to **Inbound Security Rules** and click **Add**.
-     - Set **Source** to **Any**, **Source Port Range** to ***Any***, **Destination** to **Any**, **Destination Port Range** to ***Any***, and **Protocol** to **Any**.
-     - Allow all traffic by setting **Action** to **Allow**.
-
-6. **Attach the NSG to the Virtual Machine:**
+5. **Attach the NSG to the Virtual Machine:**
    - Go to the **Networking** tab of your VM.
    - Under **Network Interface**, find the network interface connected to the virtual machine.
    - In the **Network Interface** settings, attach the newly created **NSG** (`AttackSim-NSG`).
