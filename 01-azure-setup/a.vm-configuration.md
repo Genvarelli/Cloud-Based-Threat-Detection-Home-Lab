@@ -29,7 +29,10 @@
    - Click **Next: Disks**.
    - You can leave the OS disk size as the default 127 GIB.
    - Click **Next: Networking**
-   - Complete the setup and click **Review + Create**.
+   - For virtual network select the network you made earlier.
+   - Tick the **Delete public IP and NIC when VM is deleted**.
+   - in **Next: Monitoring** diable the **Boot diagnostics**.
+   - Click **Review + Create** and then **Create**..
 
 4. **Log into the Virtual Machine:**
    - After the VM is deployed, log into it via **RDP** (for Windows) or **SSH** (for Linux).
