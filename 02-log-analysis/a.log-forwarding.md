@@ -4,11 +4,11 @@
 - Azure Sentinel is connected to the Log Repository.
 - Ensure you have the necessary permissions in Azure to configure resources.
 
- **Configure Azure Monitoring Agent (AMA) Security Event Connector**
-   - The AMA Security Event Connector links your virtual machines (VMs) to the Log Analytics workspace, enabling the forwarding of logs.
+**Configure Azure Monitoring Agent (AMA) Security Event Connector**  
+The AMA Security Event Connector links your virtual machines (VMs) to the Log Analytics workspace, enabling the forwarding of logs.
 
 ## Steps to Configure Log Analytics:
-   
+
 1. **Navigate to Content Hub in Microsoft Sentinel**
    - In the Microsoft Sentinel portal, go to **Content Management**.
    - Click on **Content Hub**.
