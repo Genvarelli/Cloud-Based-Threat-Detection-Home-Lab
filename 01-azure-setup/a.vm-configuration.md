@@ -23,33 +23,30 @@
    - Click **Create** then select **Azure Virtual Machine**.
    - Select the **Resource Groups** you made.
    - Name your virtual machine (e.g., `GENESYS-NET-1`) and select the same region as your resource group.
-   - Select the **Windows 10** as your desired image.
-   - Create an Administrator Account
-   - Tick the the Licensing Box.
-   - Click **Next: Disks**.
-   - You can leave the OS disk size as the default 127 GIB.
-   - Click **Next: Networking**
-   - For virtual network select the network you made earlier.
-   - Tick the **Delete public IP and NIC when VM is deleted**.
-   - in **Next: Monitoring** diable the **Boot diagnostics**.
-   - Click **Review + Create** and then **Create**..
+   - Choose **Windows 10** as the OS image.  
+- Create an **Administrator Account** and tick the **Licensing Box**.  
+- Click **Next: Disks** and leave the OS disk size at **127 GiB** (default). 
+- Click **Next: Networking**, select the **Virtual Network** created earlier.  
+- Tick **Delete public IP and NIC when VM is deleted**.  
+- Click **Next: Monitoring** and disable **Boot diagnostics**.  
+- Click **Review + Create** → **Create**. 
 
 4. **Create a Network Security Group (NSG):**
-   -  - Inside your Resource Group, Edit your network security group
-   - Delete the **RDP** from the **Inbound Security rules**.
-   - Click Settings, click Inbound Security Rules and Click **ADD** Inbound Security Rules.
-   - Set **Source** to **Any**, **Source Port Range** to ***Any***, **Destination** to **Any**, **Destination Port Range** to ***Any***, and **Protocol** to **Any**.
-   - Allow all traffic by setting **Action** to **Allow**.
+   - Inside the **Resource Group**, find and edit the **Network Security Group (NSG)**.  
+- Delete the **RDP** rule from **Inbound Security Rules**.  
+- Click **Settings** → **Inbound Security Rules** → **Add** Rule. 
+   - Set **Source** to **Any**, **Source Port Range** to ***Any***, **Destination** to **Any**, **Destination Port Range** to ***Any***, and **Protocol** to **Any**, Set **Action** to `Allow`
    - Name the rule **'DANGER_AllowAnyCustomAnyInbound'** and **ADD**.
-   - 
-5. **Log into the Virtual Machine:**
-   - Copy your Virtual Public IP Address from the Virtual machines and paste your IP Address into **Remote Desktop Connection** on Windows.
-   - Click **Connect**, Login with the **Administrator Username** and password you created.
-
-5. **Attach the NSG to the Virtual Machine:**
-   - Go to the **Networking** tab of your VM.
-   - Under **Network Interface**, find the network interface connected to the virtual machine.
-   - In the **Network Interface** settings, attach the newly created **NSG** (`AttackSim-NSG`).
+     
+### 5. Log into the Virtual Machine  
+- Copy the **Public IP Address** of your VM.  
+- Open **Remote Desktop Connection** on Windows and enter the copied IP.  
+- Click **Connect**, then log in with the **Administrator Username** and Password you created.  
+- Once inside the **Windows 10 VM**:  
+  - Search **wf.msc** in the Start menu and open it.  
+  - Click **Windows Defender Firewall Properties**.  
+  - Turn off the firewall for all profiles (Domain, Private, and Public).  
+  - Click **Apply** → **OK**. 
 
 ### Notes:
 - You have now set up a VM that is fully exposed to the internet, including its internal firewall and Azure network firewall.
