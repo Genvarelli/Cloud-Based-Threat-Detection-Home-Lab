@@ -1,22 +1,22 @@
 # KQL Queries Guide for Log Analytics and Sentinel Integration
 
-This guide explains how to use KQL (Kusto Query Language) to query logs in Azure Sentinel after connecting your log repository to Sentinel.
+This guide will walk you through the process of using KQL (Kusto Query Language) to query logs in Azure Sentinel after connecting your log repository to Sentinel.
 
 ## Steps to Query Logs in Sentinel
 
-1. **Search Log Analytics Workspace**  
-   - Go to the Log Analytics workspace you created.
-   - On the left-hand side, click on *Logs*.
+1. **Search Log Analytics Workspace**
+   - Navigate to the Log Analytics workspace that you created.
+   - On the left menu, click *Logs*.
 
-2. **Switch to KQL Mode**  
+2. **Switch to KQL Mode**
    - In the query box, switch from *Simple Mode* to *KQL Mode*.
 
-3. **Check if Logs Are Flowing**  
-   - To check if logs are flowing, search for `SecurityEvent` and click *Run*.  
-   - This will display logs from the SecurityEvent table. It may take a few minutes for the logs to appear in the query table.
+3. **Check if Logs Are Flowing**
+   - To verify if logs are coming in, search for `SecurityEvent` and click *Run*.
+   - This will show logs from the SecurityEvent table. Note that it may take a few minutes for the logs to show up.
 
-4. **Filter by User Principal Name (Account)**  
-   - If you want to query logs related to a specific account, you can filter by the `UserPrincipalName` (the account’s email or username).  
+4. **Filter by User Principal Name (Account)**
+   - To search logs for a specific account, you can filter by `UserPrincipalName` (the account's email or username).
    - Example KQL query to filter by account:
    
      ```kql
@@ -24,10 +24,11 @@ This guide explains how to use KQL (Kusto Query Language) to query logs in Azure
      | where UserPrincipalName == "user@example.com"
      | project TimeGenerated, Account, Computer, EventID, Activity, IpAddress
      ```
-   - Run the query to see records related only to that account.
 
-5. **Query for Logon Failures**  
-   - To see logon failures, use the following KQL code:
+   - Running this query will display records related to the specified account only.
+
+5. **Query for Logon Failures**
+   - To see logon failures, you can use this KQL query:
 
      ```kql
      SecurityEvent
@@ -35,10 +36,10 @@ This guide explains how to use KQL (Kusto Query Language) to query logs in Azure
      | project TimeGenerated, Account, Computer, EventID, Activity, IpAddress
      ```
 
-6. **Experiment with KQL Queries**  
-   - Feel free to experiment with KQL codes to filter and find the information you need.
-   - For more advanced KQL usage, check out the free resource: [Tutorial: Learn common Kusto Query Language operators]([com/en-us/kusto/query/tutorials/learn-common-operators?view=microsoft-fabric]).
+6. **Experiment with KQL Queries**
+   - Feel free to play around with different KQL queries to filter and find the data you need.
+   - For more advanced KQL queries, check out this free tutorial: [Learn common Kusto Query Language operators](https://learn.microsoft.com/en-us/kusto/query/tutorials/learn-common-operators).
 
 ---
 
-With these steps, you can query your log data in Azure Sentinel efficiently. Happy querying!
+With these steps, you'll be able to query your log data in Azure Sentinel more effectively. Good luck with your queries!
