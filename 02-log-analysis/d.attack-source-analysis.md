@@ -1,5 +1,8 @@
-
 ## KQL Queries for Geolocation Data
+
+(observe architecture)
+
+Observe the logs now have geographic information, so you can see where the attacks are coming from
 
 ### Retrieve All Geolocation Data
 
