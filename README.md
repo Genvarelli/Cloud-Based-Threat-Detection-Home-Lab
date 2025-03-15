@@ -1,32 +1,24 @@
-# Cloud-Based Security Monitoring with Microsoft Azure
+# Cloud-Based Security Monitoring with Microsoft Azure 
+**Tagline**: Set up a cloud-based SOC in Azure using Microsoft Sentinel for security event analysis and incident response.
 
-## Project Overview
-This project sets up a basic home SOC in **Microsoft Azure** from scratch. Using a free Azure subscription, we create a **Virtual Machine (VM)**, expose it as a honeypot, and forward logs to a central repository. We then integrate **Microsoft Sentinel** to analyse real-world attack data, providing hands-on experience in **cloud security monitoring**, **threat detection**, and **SOC operations**.
+## Description  
+This project guides you through setting up a home **Security Operations Centre (SOC)** in **Microsoft Azure** with a **Virtual Machine (VM)**, exposing it as a honeypot and forwarding logs to **Microsoft Sentinel** for analysis. Gain hands-on experience in cloud security monitoring, threat detection, and incident response.
 
-## Key Features
-- Set up a **free Azure subscription** and deployed a **Virtual Machine**.
-- Created a **Log Analytics Workspace** to collect and store logs.
-- Integrated **Microsoft Sentinel** to analyze security events.
-- Used **KQL (Kusto Query Language)** for querying log data.
-- Uploaded **Geolocation Data** to enrich security analysis.
-- Created an **Attack Map** to visualize real-world threats.
-- Demonstrated **Incident Creation & Response** in a cloud SOC environment.
+## Getting Started  
+1. Create a free **Microsoft Azure** account.
+2. Set up a **VM** and **Log Analytics Workspace**.
+3. Integrate **Microsoft Sentinel** for log analysis.
 
-## Project Phases
-### Phase 1: Azure Setup & Configuration
-- **Azure Subscription & VM Setup**: [Instructions](01-azure-setup/a.vm-configuration.md)
-- **Log Analytics Workspace Setup**: [Guide](01-azure-setup/b.log-analytics-setup.md)
+### Dependencies  
+- **Azure** account (free tier)
+- Basic knowledge of **KQL (Kusto Query Language)**
 
-### Phase 2: Log Collection & Analysis
-- **Forwarding Logs to Log Analytics Workspace**: [Configuration](02-log-analysis/a.log-forwarding.md)
-- **Querying Logs with KQL**: [KQL Queries](02-log-analysis/b.kql-queries.md)
-- **Uploading Geolocation Data to SIEM**: [Guide](02-log-analysis/c.geolocation-data.md)
-- **Inspecting Enriched Logs & Attack Sources**: [Analysis](02-log-analysis/d.attack-source-analysis.md)
+### Basic Usage  
+1. Follow setup guides for **VM** and **Log Analytics Workspace**.
+2. Use **KQL** queries to analyse logs.
+3. Visualise threats with the **Attack Map**.
 
-### Phase 3: Threat Detection & Incident Response
-- **Creating an Attack Map**: [Visualisation](03-threat-detection/a.attack-map.md)
-- **Generating & Handling Incidents in Sentinel**: [Incident Response](03-threat-detection/b.incident-creation.md)
-
-## Resources
-- [Setup Guide](04-docs/a.setup-guide.md)
-- [Project Summary](04-docs/b.project-summary.md)
+## Usage  
+1. **Azure Setup & Configuration**: Set up **VM** and **Log Analytics** ([Guide](01-azure-setup/a.vm-configuration.md))  
+2. **Log Collection & Analysis**: Forward logs, query with **KQL**, and enrich with geolocation data ([Guide](02-log-analysis/a.log-forwarding.md))  
+3. **Threat Detection & Incident Response**: Create an **Attack Map** and generate incidents in **Sentinel** ([Guide](03-threat-detection/a.attack-map.md))
