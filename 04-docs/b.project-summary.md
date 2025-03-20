@@ -1,8 +1,5 @@
 ## Project Summary
 
-### Purpose  
-This project is about setting up a cloud-based Security Operations Centre (SOC) using Microsoft Azure and Microsoft Sentinel. The goal is to gain hands-on experience with cloud security, threat detection, and incident response. A Virtual Machine (VM) is used as a honeypot to simulate attacks and send logs to Microsoft Sentinel for analysis.
-
 ### Project Overview  
 This project helps solve the problem of gaining practical cloud security experience. It’s designed for anyone starting in cybersecurity, offering a simple way to set up a SOC and work with real-world data. By analysing logs from a honeypot in Microsoft Sentinel, I got the chance to practice detecting threats and responding to security incidents.
 
