@@ -1,4 +1,4 @@
-# Cloud-Based Security Monitoring with Microsoft Azure
+# Cloud-Based Threat Detection Home Lab
 
 ## Objective
 This project aimed to establish a cloud-based Security Operations Centre (SOC) using Microsoft Azure and Microsoft Sentinel. The primary goal was to set up a virtual machine (VM) as a honeypot, forward logs to Microsoft Sentinel, and analyse security events for threat detection and incident response.
