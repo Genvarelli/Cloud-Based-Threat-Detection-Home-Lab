@@ -34,7 +34,7 @@ This project aimed to establish a cloud-based Security Operations Centre (SOC) u
 - Investigated security incidents and analysed event data for patterns.
 
 ## Challenges
-One major challenge was configuring log ingestion from the honeypot VM to Microsoft Sentinel. Log forwarding issues, especially with CSV file format compatibility, caused delays in data processing. Despite extensive troubleshooting, the issue remained unresolved, highlighting the complexities of cloud-based integrations.
+One major challenge was configuring log ingestion from the honeypot VM to Microsoft Sentinel. Log forwarding issues, especially with CSV file format compatibility, caused delays in data processing. Despite extensive troubleshooting, the issue remained unresolved, highlighting the complexities of cloud-based integrations. I'm revisiting this project because getting it right will be valuable for my growth.
 
 ## Learning Outcomes
 - Gained hands-on experience setting up a cloud-based SOC.
