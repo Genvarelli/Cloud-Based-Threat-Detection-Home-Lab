@@ -1,48 +1,54 @@
 # Cloud Threat Hunting Simulation
 
 ## Objective
-This project aimed to establish a cloud-based Security Operations Centre (SOC) using Microsoft Azure and Microsoft Sentinel. The primary goal was to set up a virtual machine (VM) as a honeypot, forward logs to Microsoft Sentinel, and analyse security events for threat detection and incident response.
+This project focuses on building a cloud-based Security Operations Centre (SOC) using **Microsoft Azure** and **Microsoft Sentinel**.  
+The main goal is to deploy a **honeypot virtual machine (VM)**, forward logs to Sentinel, and analyse events to simulate **threat hunting** and **incident response** in a cloud environment.
 
-### Skills Learned
-- Practical experience with cloud-based SIEM (Microsoft Sentinel)
-- Log collection, analysis, and querying using KQL (Kusto Query Language)
-- Configuring and managing virtual machines in Azure
-- Threat detection, analysis, and incident response workflows
-- Troubleshooting log ingestion and data integration issues
+## Skills Learned
+- Hands-on experience with cloud-based SIEM (Microsoft Sentinel)  
+- Log collection, analysis, and querying using **KQL (Kusto Query Language)**  
+- Deploying and configuring VMs in Azure  
+- Conducting threat detection, investigation, and incident response workflows  
+- Troubleshooting log ingestion and data integration issues  
 
-### Tools Used
-- Microsoft Azure (Free Tier)
-- Microsoft Sentinel for log analysis
-- KQL (Kusto Query Language) for querying logs
-- Virtual Machine (VM) as a honeypot
-- Log Analytics Workspace for centralised log storage
+## Tools Used
+- **Microsoft Azure** (Free Tier)  
+- **Microsoft Sentinel** for SIEM and analytics  
+- **KQL (Kusto Query Language)** for log queries  
+- **Virtual Machine (Honeypot)** for attack simulation  
+- **Log Analytics Workspace** for centralised log storage  
 
 ## Steps
+
 ### 1. Azure Setup & Configuration
-- Created a free Microsoft Azure account.
-- Deployed a Virtual Machine (VM) to act as a honeypot.
-- Configured the VM’s network settings to allow inbound traffic for attack simulation.
+- Created a Microsoft Azure account (free tier).  
+- Deployed a **Virtual Machine (VM)** configured as a honeypot.  
+- Adjusted network settings to allow inbound traffic for simulated attacks.  
 
 ### 2. Log Collection & Analysis
-- Set up Log Analytics Workspace to collect logs from the VM.
-- Integrated Microsoft Sentinel for real-time log analysis.
-- Used KQL to query and analyse log data for security insights.
+- Configured **Log Analytics Workspace** to collect VM logs.  
+- Integrated **Microsoft Sentinel** for real-time log monitoring.  
+- Queried and analysed logs using **KQL** to detect suspicious activity.  
 
 ### 3. Threat Detection & Incident Response
-- Simulated attack scenarios on the honeypot.
-- Created an Attack Map in Microsoft Sentinel to visualise security threats.
-- Investigated security incidents and analysed event data for patterns.
+- Simulated cyberattacks targeting the honeypot VM.  
+- Built an **Attack Map** in Microsoft Sentinel to visualise threats.  
+- Investigated incidents and identified patterns in attack data.  
 
 ## Challenges
-One major challenge was configuring log ingestion from the honeypot VM to Microsoft Sentinel. Log forwarding issues, especially with CSV file format compatibility, caused delays in data processing. Despite extensive troubleshooting, the issue remained unresolved, highlighting the complexities of cloud-based integrations. I'm revisiting this project because getting it right will be valuable for my growth.
+Configuring **log ingestion** from the honeypot VM to Sentinel was a major challenge.  
+Issues with forwarding logs (particularly around CSV compatibility) caused delays in event analysis.  
+Despite troubleshooting, the issue persisted — highlighting the **complexity of integrating cloud-based security tools**.  
+This project remains **in development**, with further refinements planned.  
 
 ## Learning Outcomes
-- Gained hands-on experience setting up a cloud-based SOC.
-- Improved troubleshooting skills for Azure log ingestion issues.
-- Developed a better understanding of configuring security tools in the cloud.
-- Learned how to create and respond to security incidents using Microsoft Sentinel.
+- Gained hands-on experience setting up a **cloud SOC**.  
+- Strengthened troubleshooting skills in Azure environments.  
+- Learned the process of **incident detection, triage, and response** with Microsoft Sentinel.  
+- Enhanced understanding of **log ingestion pipelines** and their challenges.  
 
 ## Future Work
-- Automate incident response using Playbooks.
-- Integrate additional security tools for enhanced log analysis.
-- Simulate more advanced attack scenarios for deeper analysis.
+- Automate responses using **Sentinel Playbooks**.  
+- Add **AWS GuardDuty integration** for multi-cloud security insights.  
+- Simulate **advanced attack scenarios** (e.g., credential theft, persistence).  
+- Expand logging sources for a more realistic SOC environment.  
