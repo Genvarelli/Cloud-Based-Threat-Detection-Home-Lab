@@ -39,7 +39,7 @@ The main goal is to deploy a **honeypot virtual machine (VM)**, forward logs to 
 ## Challenges
 Configuring **log ingestion** from the honeypot VM to Sentinel was a major challenge.  
 Issues with forwarding logs (particularly around CSV compatibility) caused delays in event analysis.  
-Despite troubleshooting, the issue persisted — highlighting the **complexity of integrating cloud-based security tools**.  
+Despite troubleshooting, the issue persisted highlighting the **complexity of integrating cloud-based security tools**.  
 This project remains **in development**, with further refinements planned.  
 
 ## Learning Outcomes
