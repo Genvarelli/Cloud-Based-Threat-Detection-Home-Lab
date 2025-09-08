@@ -1,4 +1,5 @@
 # Cloud Threat Hunting Simulation
+![Status](https://img.shields.io/badge/status-In%20Development-yellow)
 
 ## Objective
 This project focuses on building a cloud-based Security Operations Centre (SOC) using **Microsoft Azure** and **Microsoft Sentinel**.  
