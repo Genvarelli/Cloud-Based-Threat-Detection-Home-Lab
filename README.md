@@ -46,9 +46,3 @@ This project remains **in development**, with further refinements planned.
 - Strengthened troubleshooting skills in Azure environments.  
 - Learned the process of **incident detection, triage, and response** with Microsoft Sentinel.  
 - Enhanced understanding of **log ingestion pipelines** and their challenges.  
-
-## Future Work
-- Automate responses using **Sentinel Playbooks**.  
-- Add **AWS GuardDuty integration** for multi-cloud security insights.  
-- Simulate **advanced attack scenarios** (e.g., credential theft, persistence).  
-- Expand logging sources for a more realistic SOC environment.  
