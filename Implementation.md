@@ -41,8 +41,6 @@ The goal was to create a **foundational network** that could safely host web app
    - **Public subnet route table:** routes all internet-bound traffic (`0.0.0.0/0`) to the IGW.
    - **Private subnet route table:** routes all internet-bound traffic to the NAT Gateway.
 
-   📸 **Screenshot Opportunity:** Route tables showing IGW for public and NAT Gateway for private.
-
    ![Route tables showing IGW for public and NAT Gateway for private](diagrams/routetable.png)
 
 ---
@@ -76,6 +74,8 @@ The focus was on **least-privilege access**, secure administrative roles, and en
 5. Ensure MFA is enabled for human users who assume this role.
 
 📸 **Screenshot Opportunity:** Role summary page showing `SecureCloudAdminRole` with AdministratorAccess.
+
+![Role summary page showing `SecureCloudAdminRole` with AdministratorAccess](diagrams/AdministratorAccess.png)
 
 > ✅ Admin tasks are now performed via a secure role instead of the root account.
 
