@@ -7,7 +7,7 @@ Each module builds on the previous one, showing how security, resilience, and be
 
 ## Module 1: Networking Setup – SecureCloudVPC
 
-In this module, I built a **secure network architecture** in AWS to separate public and private resources, following best practices for a production-ready environment.  
+In this module, I built a **secure network architecture** in AWS to separate public and private resources, following best practices for a production ready environment.  
 The goal was to create a **foundational network** that could safely host web applications and backend services while controlling internet access.
 
 ---
@@ -19,13 +19,15 @@ The goal was to create a **foundational network** that could safely host web app
    - CIDR block: `10.0.0.0/16`  
    - This defines the entire network range for all resources in the project.
 
-   📸 **Screenshot Opportunity:** VPC details page showing `SecureCloudVPC` and CIDR block.
+![VPC details page showing `SecureCloudVPC` and CIDR block](diagrams/vpc.png)
 
 2. **Created Subnets**
    - **Public subnet:** `10.0.1.0/24` – hosts resources that require direct internet access.
    - **Private subnet:** `10.0.2.0/24` – hosts internal resources that should not be directly accessible from the internet.
 
    📸 **Screenshot Opportunity:** Subnets list with public/private subnet names and CIDRs.
+
+![Subnets list with public/private subnet names and CIDRs](diagrams/subnets.png)
 
 3. **Internet Gateway (IGW)**
    - Attached to the VPC to allow **public subnet resources** to communicate with the internet.
