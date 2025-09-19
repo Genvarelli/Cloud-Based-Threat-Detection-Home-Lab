@@ -73,8 +73,6 @@ The focus was on **least-privilege access**, secure administrative roles, and en
 4. Name the role `SecureCloudAdminRole`.  
 5. Ensure MFA is enabled for human users who assume this role.
 
-📸 **Screenshot Opportunity:** Role summary page showing `SecureCloudAdminRole` with AdministratorAccess.
-
 ![Role summary page showing `SecureCloudAdminRole` with AdministratorAccess](diagrams/AdministratorAccess.png)
 
 > ✅ Admin tasks are now performed via a secure role instead of the root account.
