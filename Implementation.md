@@ -7,7 +7,7 @@ Each module builds on the previous one, showing how security, resilience, and be
 
 ## Module 1: Networking Setup – SecureCloudVPC
 
-In this module, I built a **secure network architecture** in AWS to separate public and private resources, following best practices for a production ready environment.  
+In this module, I built a **secure network architecture** in AWS to separate public and private resources, following best practices for a production-ready environment.  
 The goal was to create a **foundational network** that could safely host web applications and backend services while controlling internet access.
 
 ---
@@ -83,11 +83,11 @@ The focus was on **least-privilege access**, secure administrative roles, and en
 
 To follow best practices, I created dedicated roles for resources, each with only the permissions they require.
 
-| Role Name             | Permissions                  | Use Case                                   |
-|-----------------------|-----------------------------|-------------------------------------------|
-| `EC2SecureCloudRole`    | EC2 + S3 read/write only     | EC2 instances accessing S3                |
-| `S3SecureCloudRole`     | S3 read/write only           | Lambda functions or apps interacting with S3 |
-| `CloudTrailSecureRole`  | CloudTrail write to S3 only  | Logging CloudTrail events                  |
+| Role Name              | Permissions                  | Use Case                                     |
+|------------------------|-----------------------------|---------------------------------------------|
+| `EC2SecureCloudRole`   | EC2 + S3 read/write only     | EC2 instances accessing S3                  |
+| `S3SecureCloudRole`    | S3 read/write only           | Lambda functions or apps interacting with S3 |
+| `CloudTrailSecureRole` | CloudTrail write to S3 only  | Logging CloudTrail events                    |
 
 **Steps Taken:**
 1. Go to **IAM → Roles → Create role**.  
@@ -114,7 +114,6 @@ To follow best practices, I created dedicated roles for resources, each with onl
 2. Choose **Virtual MFA device** (Google Authenticator, Authy, etc.).  
 3. Scan the QR code and enter two consecutive codes to enable MFA.  
 
-
 > ✅ MFA ensures that even if credentials are compromised, administrative access is protected.
 
 ---
@@ -128,7 +127,73 @@ To follow best practices, I created dedicated roles for resources, each with onl
 
 ---
 
-## Coming Next
+## Module 3: S3 Buckets and Encryption
 
-- **Module 3: S3 Buckets and Encryption** – Setting up encrypted storage with S3 and KMS.  
-- **Module 4: Logging and Monitoring** – Enabling CloudTrail, Config, GuardDuty, and alerts.
+This module focuses on **secure storage** using Amazon S3.  
+Buckets were configured with **default encryption** and strict security policies to ensure compliance and prevent public exposure.
+
+---
+
+### Step 1: Create Buckets
+1. Go to **Services → S3 → Create bucket**.
+2. Configure:
+   - **Bucket name:** `secure-cloud-logs`
+   - **Region:** same as VPC
+   - **Object Ownership:** Bucket owner enforced (ACLs disabled)
+   - **Block Public Access:** all four options checked
+   - **Default encryption:** Enable → **SSE-S3**
+3. Click **Create bucket**.
+4. Repeat for `secure-cloud-data`.
+
+---
+
+### Step 2: Verify Security Settings
+For each bucket:
+- **Permissions tab:** Block public access = ON.
+- **Properties tab:** Default encryption = SSE-S3.
+
+---
+
+### Step 3: Add Bucket Policy (HTTPS Enforcement)
+
+For `secure-cloud-data`:
+
+1. Go to **Permissions → Bucket Policy → Edit**.  
+2. Paste the following JSON (replace bucket name if needed):
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyUnEncryptedTransport",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::secure-cloud-data",
+        "arn:aws:s3:::secure-cloud-data/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      }
+    }
+  ]
+}
+
+### Step 4: Test
+1. Upload a file into secure-cloud-data.
+2.  Open the object → Properties → confirm Encryption: SSE-S3.
+3. Upload the same file again → confirm still encrypted with SSE-S3.
+4. Try access over HTTP → should be denied.
+
+### Key Takeaways
+- Buckets are encrypted by default with SSE-S3.
+- Public access is blocked across all buckets.
+- Bucket policy enforces HTTPS-only access.
+- Storage is ready for logging, monitoring, and application data.
+
+### Coming Next
+- Module 4: Logging and Monitoring – Enabling CloudTrail, Config, GuardDuty, and alerts.
