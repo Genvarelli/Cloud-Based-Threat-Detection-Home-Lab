@@ -8,6 +8,10 @@ It focuses on **best practices** for network design, identity management, data p
 
 The goal is to create an environment that is **secure by design** while providing a clear example for learning and portfolio purposes.
 
+### Network Diagram
+
+![SecureCloudVPC Network Diagram](diagrams/network-diagram.png)
+
 **High-level objectives:**
 - Separate network zones for public and private resources
 - Secure access with least-privilege IAM policies
