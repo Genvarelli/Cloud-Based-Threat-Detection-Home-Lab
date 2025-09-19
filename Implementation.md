@@ -19,31 +19,31 @@ The goal was to create a **foundational network** that could safely host web app
    - CIDR block: `10.0.0.0/16`  
    - This defines the entire network range for all resources in the project.
 
-![VPC details page showing `SecureCloudVPC` and CIDR block](diagrams/vpc.png)
+   ![VPC details page showing `SecureCloudVPC` and CIDR block](diagrams/vpc.png)
 
 2. **Created Subnets**
    - **Public subnet:** `10.0.1.0/24` – hosts resources that require direct internet access.
    - **Private subnet:** `10.0.2.0/24` – hosts internal resources that should not be directly accessible from the internet.
 
-![Subnets list with public/private subnet names and CIDRs](diagrams/subnet.png)
+   ![Subnets list with public/private subnet names and CIDRs](diagrams/subnet.png)
 
 3. **Internet Gateway (IGW)**
    - Attached to the VPC to allow **public subnet resources** to communicate with the internet.
 
-![IGW attached to VPC](diagrams/igw.png)
+   ![IGW attached to VPC](diagrams/igw.png)
 
 4. **NAT Gateway**
    - Placed in the public subnet to allow **private subnet resources** to initiate outbound internet connections safely.
 
-   📸 **Screenshot Opportunity:** NAT Gateway details showing Elastic IP and subnet placement.
-
-![NAT Gateway details showing Elastic IP and subnet placement](diagrams/natgateway.png)
+   ![NAT Gateway details showing Elastic IP and subnet placement](diagrams/natgateway.png)
 
 5. **Route Tables**
    - **Public subnet route table:** routes all internet-bound traffic (`0.0.0.0/0`) to the IGW.
    - **Private subnet route table:** routes all internet-bound traffic to the NAT Gateway.
 
    📸 **Screenshot Opportunity:** Route tables showing IGW for public and NAT Gateway for private.
+
+   ![Route tables showing IGW for public and NAT Gateway for private](diagrams/routetable.png)
 
 ---
 
