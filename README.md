@@ -66,5 +66,3 @@ The goal is to create an environment that is **secure by design** while providin
 - Expand monitoring coverage with **CloudWatch dashboards**  
 - Integrate additional compliance checks and logging sources  
 
-> See [NEXT_STEPS.md](./NEXT_STEPS.md) for full details.
-
