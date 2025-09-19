@@ -64,16 +64,3 @@ The goal is to create an environment that is **secure by design** while providin
 
 > See [NEXT_STEPS.md](./NEXT_STEPS.md) for full details.
 
----
-
-## 📂 Project Structure
-```text
-aws-secure-cloud/
-├── README.md
-├── ARCHITECTURE.md
-├── IMPLEMENTATION.md
-├── NEXT_STEPS.md
-├── diagrams/
-├── terraform/
-├── cloudformation/
-└── scripts/
