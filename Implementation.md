@@ -99,7 +99,7 @@ To follow best practices, I created dedicated roles for resources, each with onl
 4. Name the roles clearly.  
 5. Assign roles to the corresponding resources.  
 
-📸 **Screenshot Opportunity:** IAM roles list showing the three custom roles.
+![IAM roles list showing the three custom roles](diagrams/iamroles.png)
 
 > ✅ Using least-privilege roles minimizes risk and ensures resources only have the access they need.
 
@@ -114,7 +114,6 @@ To follow best practices, I created dedicated roles for resources, each with onl
 2. Choose **Virtual MFA device** (Google Authenticator, Authy, etc.).  
 3. Scan the QR code and enter two consecutive codes to enable MFA.  
 
-📸 **Screenshot Opportunity:** MFA enabled on a user account.
 
 > ✅ MFA ensures that even if credentials are compromised, administrative access is protected.
 
