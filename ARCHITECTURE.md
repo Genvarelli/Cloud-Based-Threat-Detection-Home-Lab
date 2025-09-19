@@ -24,8 +24,6 @@ In this module, I built a **secure network architecture** in AWS to separate pub
    - **Public subnet route table:** routes all internet-bound traffic (`0.0.0.0/0`) to the IGW.
    - **Private subnet route table:** routes all internet-bound traffic to the NAT Gateway.
 
-6. **Network ACLs**
-   - Reverted to the **default AWS NACLs** for simplicity.
 
 ### Key Takeaways
 - Network is **segmented** into public and private zones.
