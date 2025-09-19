@@ -25,14 +25,12 @@ The goal was to create a **foundational network** that could safely host web app
    - **Public subnet:** `10.0.1.0/24` – hosts resources that require direct internet access.
    - **Private subnet:** `10.0.2.0/24` – hosts internal resources that should not be directly accessible from the internet.
 
-   📸 **Screenshot Opportunity:** Subnets list with public/private subnet names and CIDRs.
-
 ![Subnets list with public/private subnet names and CIDRs](diagrams/subnets.png)
 
 3. **Internet Gateway (IGW)**
    - Attached to the VPC to allow **public subnet resources** to communicate with the internet.
 
-   📸 **Screenshot Opportunity:** IGW attached to VPC.
+![IGW attached to VPC](diagrams/igw.png)
 
 4. **NAT Gateway**
    - Placed in the public subnet to allow **private subnet resources** to initiate outbound internet connections safely.
