@@ -37,7 +37,7 @@ The goal was to create a **foundational network** that could safely host web app
 
    📸 **Screenshot Opportunity:** NAT Gateway details showing Elastic IP and subnet placement.
 
-   ![NAT Gateway details showing Elastic IP and subnet placement](diagrams/natgateway.png)
+![NAT Gateway details showing Elastic IP and subnet placement](diagrams/natgateway.png)
 
 5. **Route Tables**
    - **Public subnet route table:** routes all internet-bound traffic (`0.0.0.0/0`) to the IGW.
