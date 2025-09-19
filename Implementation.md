@@ -161,11 +161,11 @@ For `secure-cloud-data`:
 1. Go to **Permissions → Bucket Policy → Edit**.  
 2. Paste the following JSON (replace bucket name if needed):
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
+   ```json
+   {
+        "Version": "2012-10-17",
+     "Statement": [
+       {
       "Sid": "DenyUnEncryptedTransport",
       "Effect": "Deny",
       "Principal": "*",
@@ -177,11 +177,11 @@ For `secure-cloud-data`:
       "Condition": {
         "Bool": {
           "aws:SecureTransport": "false"
-        }
-      }
-    }
-  ]
-}
+           }
+         }
+       }
+     ]
+   }
 
 ### Step 4: Test
 1. Upload a file into secure-cloud-data.
