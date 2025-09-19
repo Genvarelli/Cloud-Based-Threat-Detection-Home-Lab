@@ -1,7 +1,7 @@
 # Secure Cloud Environment on AWS  
+
 ![Status](https://img.shields.io/badge/status-In%20Development-yellow)
 
----
 ## 🚀 Project Overview
 This project demonstrates how to build a **secure, resilient cloud environment** on AWS.  
 It focuses on **best practices** for network design, identity management, data protection, and monitoring.  
