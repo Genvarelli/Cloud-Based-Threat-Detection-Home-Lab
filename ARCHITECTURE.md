@@ -4,6 +4,11 @@
 
 In this module, I built a **secure network architecture** in AWS to separate public and private resources, following best practices for a production-ready environment. The goal was to create a **foundational network** that could safely host web applications and backend services while controlling internet access.
 
+### Network Diagram
+
+![SecureCloudVPC Network Diagram](imgs/network-diagram.png)
+
+
 ### What I Did
 1. **Created a Custom VPC**
    - Name: `SecureCloudVPC`
