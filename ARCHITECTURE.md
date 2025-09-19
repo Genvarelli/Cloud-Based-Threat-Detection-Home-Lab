@@ -6,7 +6,7 @@ In this module, I built a **secure network architecture** in AWS to separate pub
 
 ### Network Diagram
 
-![SecureCloudVPC Network Diagram](imgs/network-diagram.png)
+![SecureCloudVPC Network Diagram](diagrams/network-diagram.png)
 
 
 ### What I Did
