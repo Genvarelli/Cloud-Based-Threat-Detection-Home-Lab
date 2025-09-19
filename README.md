@@ -50,7 +50,7 @@ The goal is to create an environment that is **secure by design** while providin
 3. **Data Protection** – Enable encryption for S3 buckets and configure HTTPS using ACM  
 4. **Monitoring & Alerts** – Activate CloudTrail, Config, and GuardDuty; set up SNS/EventBridge notifications  
 
-> Detailed technical instructions are in [IMPLEMENTATION.md](./IMPLEMENTATION.md).
+> Detailed technical instructions are in [Implementation.md](./Implementation.md).
 
 ---
 
