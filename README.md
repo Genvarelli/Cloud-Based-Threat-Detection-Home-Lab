@@ -1,4 +1,4 @@
-# Secure AWS Networking with Terraform
+# Networking Architecture with terraform
 
 ![Status](https://img.shields.io/badge/status-In%20Development-yellow)
 
