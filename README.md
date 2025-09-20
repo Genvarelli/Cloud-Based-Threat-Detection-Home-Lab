@@ -60,9 +60,3 @@ The goal is to create an environment that is **secure by design** while providin
 - Learned how to **monitor, detect, and respond** to security events
 
 ---
-
-## 📝 Next Steps
-- Implement automated remediation for security alerts  
-- Expand monitoring coverage with **CloudWatch dashboards**  
-- Integrate additional compliance checks and logging sources  
-
