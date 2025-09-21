@@ -37,9 +37,9 @@ Open your terminal and run:
 
 ## Step 2: Create a Terraform config file
 
-Create a file called main.tf inside ~/terraform-vpc and leave the files empty for now.
+Create a file called main.tf inside ~/terraform-vpc and leave the files empty for now. type 'terraform ini' to initialise the setup
 
-![Project Folder](imgs/tfconfigfile.png)
+![Project Folder](imgs/terraforminit.png)
 
 ## Step 1: Create Virtual Private Cloud (VPC)
 
