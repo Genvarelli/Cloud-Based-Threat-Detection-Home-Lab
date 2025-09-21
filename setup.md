@@ -6,7 +6,7 @@ This document explains the key Terraform configuration files used to build the A
 
 ## Objective
 
-This document explains the **Networking Architecture with Terraform** project. The goal is to show how to build a secure and organized cloud network on AWS using Terraform. Through this project, you’ll get hands-on experience with key cloud networking concepts and Infrastructure as Code (IaC). It’s designed to help you learn how to set up isolated networks, manage secure access, and automate infrastructure in a way that’s easy to repeat and manage.
+This document explains the **Networking Architecture with Terraform** project. The goal is to show how to build a secure and organised cloud network on AWS using Terraform. Through this project, you’ll get hands-on experience with key cloud networking concepts and Infrastructure as Code (IaC). It’s designed to help you learn how to set up isolated networks, manage secure access, and automate infrastructure in a way that’s easy to repeat and manage.
 
 ## Prerequisites
 
