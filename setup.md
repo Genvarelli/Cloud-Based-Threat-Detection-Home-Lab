@@ -41,7 +41,7 @@ Create a file called main.tf inside ~/terraform-vpc and leave the files empty fo
 
 ![Project Folder](imgs/terraforminit.png)
 
-## Step 1: Create Virtual Private Cloud (VPC)
+## Step 3: Create Virtual Private Cloud (VPC)
 
 To begin with, we are going to start by defining our Virtual Private Cloud (VPC) resource in Terraform. To specify a range of IP addresses in a VPC, a Classless Inter-Domain Routing (CIDR) block needs to be provided. We have also provided a name tag for identification.
 
@@ -57,7 +57,11 @@ Since we are creating a VPC by applying this configuration a main route table an
 
 
 
-## Step 2: Create Subnets (Public and Private)
+## Step 4: Create Subnets (Public and Private)
+
+The VPC exists across all the Availability Zones in a region. while subnets are associated with a single AZ. The Stockholm (eu-north-1) region has three AZs and we need one public (to access the internet) and one private subnet (for internal stuff like databases) in 2 AZs to keep it simple.
+
+![Subnets](imgs/subnets.png)
 
 ```hcl
 data "aws_availability_zones" "available" {}
@@ -89,6 +93,9 @@ resource "aws_subnet" "private" {
 }
 
 ```
+
+![subnets](imgs/subnetslist.png)
+As we can see from the above screenshot, we have successfully created 4 subnets.
 
 ## Step 3: Set up Internet Gateway
 
