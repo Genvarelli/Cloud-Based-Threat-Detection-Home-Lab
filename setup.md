@@ -63,36 +63,7 @@ The VPC exists across all the Availability Zones in a region. while subnets are 
 
 ![Subnets](imgs/subnets.png)
 
-```hcl
-data "aws_availability_zones" "available" {}
-
-resource "aws_subnet" "public" {
-  count             = var.public_subnet_count
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = cidrsubnet(aws_vpc.main.cidr_block, 8, count.index)
-  availability_zone = element(data.aws_availability_zones.available.names, count.index)
-
-  map_public_ip_on_launch = true
-
-  tags = {
-    Name = "public-subnet-${count.index}"
-  }
-}
-
-resource "aws_subnet" "private" {
-  count             = var.private_subnet_count
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = cidrsubnet(aws_vpc.main.cidr_block, 8, count.index + 2)
-  availability_zone = element(data.aws_availability_zones.available.names, count.index)
-
-  map_public_ip_on_launch = false
-
-  tags = {
-    Name = "private-subnet-${count.index}"
-  }
-}
-
-```
+This setup creates a private network in the cloud using AWS in the Stockholm region. Within this network, it creates two types of smaller areas: public areas that can connect to the internet, and private areas that are kept internal for things like databases or sensitive data. These areas are spread across two different buildings (called Availability Zones) to make sure everything keeps running even if one building has a problem. Each public and private area gets a unique section of the network, and everything is clearly labeled so it's easy to manage. The idea is to keep things organised, secure, and reliable even if we're only using part of what the region offers.
 
 ![subnets](imgs/subnetslist.png)
 As we can see from the above screenshot, we have successfully created 4 subnets.
