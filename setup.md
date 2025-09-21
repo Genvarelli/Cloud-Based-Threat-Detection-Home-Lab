@@ -4,6 +4,31 @@ This document explains the key Terraform configuration files used to build the A
 
 ---
 
+## Objective
+
+This document provides a detailed explanation of the **Networking Architecture with Terraform** project. The primary objective is to demonstrate how to design and implement a secure, scalable cloud network architecture on AWS using Terraform. By following this project, you will gain hands-on experience with foundational cloud networking concepts and Infrastructure as Code (IaC) best practices. The project aims to equip me with the skills necessary to create isolated network environments, manage secure access, and automate infrastructure deployment in a professional, repeatable manner.
+
+## Prerequisites
+
+Before diving into this project, it is recommended that you have a basic understanding of:
+
+- AWS cloud services, particularly networking components such as VPCs, subnets, and security groups
+- Terraform basics, including configuration files and commands
+- General networking concepts such as IP addressing, routing, and firewall rules
+- Command-line interface (CLI) usage and access to an AWS account with appropriate permissions
+
+## Technologies Used
+
+This project leverages the following technologies:
+
+- **AWS (Amazon Web Services):** Cloud platform hosting the network infrastructure
+- **Terraform:** Infrastructure as Code tool used to automate and manage AWS resources declaratively
+- **AWS VPC:** Virtual Private Cloud for creating isolated network environments
+- **Security Groups:** Virtual firewalls for controlling inbound and outbound traffic
+- **Internet Gateway & Route Tables:** Components enabling internet access and traffic routing within the network
+
+---
+
 ## Step 1: Create Virtual Private Cloud (VPC)
 
 ```hcl
