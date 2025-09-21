@@ -29,29 +29,42 @@ This project uses:
 
 ---
 
-## Step 1: Create a Project Folder
+> **Note:** I started building this project using hardcoded configuration, and halfway through I decided to switch to a **modular format** as this is considered best practice and more maintainable in the long term.
+
+---
+
+## 📁 Step 1: Create a Project Folder
 
 Open your terminal and run:
 
 ![Project Folder](imgs/vpc.dir.png)
 
-## Step 2: Create a Terraform config file
+---
 
-Create a file called main.tf inside ~/terraform-vpc and leave the files empty for now. type 'terraform ini' to initialise the setup
+## 📄 Step 2: Create a Terraform Config File
+
+Create a file called `main.tf` inside `~/terraform-vpc` and leave the file empty for now.
+
+Then, initialize Terraform by running:
+
+```bash
+terraform init
+```
 
 ![Project Folder](imgs/terraforminit.png)
 
 ## Step 3: Create Virtual Private Cloud (VPC)
 
-To begin with, we are going to start by defining our Virtual Private Cloud (VPC) resource in Terraform. To specify a range of IP addresses in a VPC, a Classless Inter-Domain Routing (CIDR) block needs to be provided. We have also provided a name tag for identification.
-
-Create a file called vpc.tf inside ~/terraform-vpc. This is where we will paste this code:
+To begin, we’ll define our Virtual Private Cloud (VPC) in Terraform. A VPC needs a CIDR block, which is a range of IP addresses.
+We’ve also added a name tag for easier identification.
+Create a file called vpc.tf inside ~/terraform-vpc. This is where we will paste the following code:
 
 ![VPC](imgs/vpc.png)
 ![VPC](imgs/vpc1.png)
 ![VPC](imgs/vpc2.png)
 ![VPC](imgs/vpc3.png)
-Since we are creating a VPC by applying this configuration a main route table and network ACL is also created. The VPC is also associated with pre-exisiting DHCP option set, as shown in the below screenshot. Take notes of this as we will need this info later.
+
+Since we are creating a VPC, AWS will also automatically create a main route table, network ACL, and associate it with a default DHCP option set. Make note of this, as we will need this info later.
 
 ![VPC](imgs/vpcconfirm.png)
 
@@ -59,24 +72,39 @@ Since we are creating a VPC by applying this configuration a main route table an
 
 ## Step 4: Create Subnets (Public and Private)
 
-The VPC exists across all the Availability Zones in a region. while subnets are associated with a single AZ. The Stockholm (eu-north-1) region has three AZs and we need one public (to access the internet) and one private subnet (for internal stuff like databases) in 2 AZs to keep things simple.
+A VPC exists across all the Availability Zones (AZs) in a region, while subnets are specific to a single AZ.
+The Stockholm (eu-north-1) region has three AZs. For simplicity, we’ll use 2 AZs and create:
+
+- one public (to access the internet)
+- one private subnet (for internal stuff like databases) 
+
+in each AZ.
 
 ![Subnets](imgs/subnets.png)
 ![Subnets](imgs/subnets1.png)
 ![Subnets](imgs/subnets2.png)
 ![Subnets](imgs/subnets3.png)
 
-This setup creates a private network in the cloud using AWS in the Stockholm region. Within this network, it creates two types of smaller areas: public areas that can connect to the internet, and private areas that are kept internal for things like databases or sensitive data. These areas are spread across two different buildings (called Availability Zones) to make sure everything keeps running even if one building has a problem. Each public and private area gets a unique section of the network, and everything is clearly labeled so it's easy to manage. The idea is to keep things organised, secure, and reliable even if we're only using part of what the region offers.
+This setup creates a private network in the cloud using AWS in the Stockholm region. Within this network, it creates two types of smaller areas:
+
+- Public areas that can connect to the internet
+- Private areas that are isolated and used for internal services
+
+These areas are spread across two different data centers (Availability Zones) to ensure the system stays up even if one zone has an issue. Each area (subnet) has a unique range of IP addresses and is clearly labeled for easy management.
+
 
 ![subnets](imgs/subnetslist.png)
-As we can see from the above screenshot, we have successfully created 4 subnets.
+As shown above, we’ve successfully created 4 subnets.
 
 ## Step 3: Set up Internet Gateway
-Since we have to build public subnets, we need to provide access to the internet in the given VPC. For this, the first thing that we need is an internet gateway. The resource block below is the simplest way to create an internet gateway.
+
+Since we’re building public subnets, we need to give them access to the internet using an Internet Gateway (IGW).
+The resource block below shows the configuration used to create one:
 
 ![Internet Gateway](imgs/igw.png)
 
-We have already associated this IG with the VPC we created before by specifying the VPC id attribute. Apply this configuration and verify the same.
+We’ve associated this IGW with the VPC we created earlier by specifying the VPC ID.
+Apply this configuration and verify the result:
 
 ![Internet Gateway](imgs/igw2.png)
 
@@ -84,7 +112,16 @@ We have already associated this IG with the VPC we created before by specifying 
 
 ## Step 4: Create a Second Route Table
 
-We already know that when a VPC is created, a main route table is created as well. The main route table is responsible for enabling the flow of traffic within the VPC.
+When a VPC is created, a main route table is also created. This handles traffic within the VPC.
+
+As shown above, there’s no explicit association of any subnet to the main route table, but all subnets are implicitly associated by default.
+
+At this point, even though some subnets are named Public, they are still private because there is no route for internet traffic.
+
+To fix this:
+- We create a new route table
+- Add a route to the internet (via the Internet Gateway)
+- Associate this route table with our public subnets
 
 ![Route tables](imgs/rt.png)
 
@@ -102,46 +139,19 @@ As a best practice, we create a second route table and associate it with the sam
 
 ![rt-igw plan and apply](imgs/p-a1.png)
 
-Verify the creation of the second route table as below and the note the route that enables internet traffic.
+Now verify that your new route table exists and is correctly configured:
 
 ![Route tables](imgs/rt3.png)
 
 ## Step 5: Create a Security Group
 
-```hcl
-resource "aws_security_group" "public_sg" {
-  name        = "public-sg"
-  description = "Allow SSH from my IP and HTTP from anywhere"
-  vpc_id      = aws_vpc.main.id
+Security Groups are like firewalls that control who can access what.
 
-  ingress {
-    description = "SSH from my IP"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = [var.allowed_ssh_ip]  # Replace with your actual IP in the variables.tf file!
-  }
+We create a new Security Group to allow only necessary traffic (e.g., SSH, HTTP, etc.).
 
-  ingress {
-    description = "HTTP from anywhere"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+![Sec groups](imgs/secgp.png)
 
-  egress {
-    description = "Allow all outbound traffic"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 
-  tags = {
-    Name = "public-security-group"
-  }
-}
+Verify the creation of the Security Group in the AWS Console:
 
-```
-Verify the creation of the security Group.
+![Sec groups](imgs/secgp1.png)
