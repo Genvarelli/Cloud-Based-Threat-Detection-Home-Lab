@@ -96,27 +96,11 @@ At this moment, even though the subnets are called Public and Private, they are 
 
 As a best practice, we create a second route table and associate it with the same VPC as shown in the below resource block. Note that we have also specified the route to the internet (0.0.0.0/0) using our IGW.
 
+![Route tables](imgs/rt2.png)
 
-```hcl
-resource "aws_route_table" "public_rt" {
-  vpc_id = aws_vpc.main.id
+Verify the creation of the second route table as below and the note the route that enables internet traffic.
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw.id
-  }
-
-  tags = {
-    Name = "public-rt"
-  }
-}
-
-resource "aws_route_table_association" "public_assoc" {
-  count          = 2
-  subnet_id      = aws_subnet.public[count.index].id
-  route_table_id = aws_route_table.public_rt.id
-}
-```
+![Route tables](imgs/rt3.png)
 
 ## Step 5: Create a Security Group
 
