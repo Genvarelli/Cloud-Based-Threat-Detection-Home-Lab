@@ -69,17 +69,13 @@ This setup creates a private network in the cloud using AWS in the Stockholm reg
 As we can see from the above screenshot, we have successfully created 4 subnets.
 
 ## Step 3: Set up Internet Gateway
+Since we have to build public subnets, we need to provide access to the internet in the given VPC. For this, the first thing that we need is an internet gateway. The resource block below is the simplest way to create an internet gateway.
 
-```hcl
-resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.main.id
+![Internet Gateway](imgs/igw.png)
 
-  tags = {
-    Name = "Project VPC IGW"
-  }
-}
+We have already associated this IG with the VPC we created before by specifying the VPC id attribute. Apply this configuration and verify the same.
 
-```
+![Internet Gateway](imgs/igw2.png)
 
 ## Step 4: Create a Second Route Table
 
