@@ -59,7 +59,7 @@ Since we are creating a VPC by applying this configuration a main route table an
 
 ## Step 4: Create Subnets (Public and Private)
 
-The VPC exists across all the Availability Zones in a region. while subnets are associated with a single AZ. The Stockholm (eu-north-1) region has three AZs and we need one public (to access the internet) and one private subnet (for internal stuff like databases) in 2 AZs to keep it simple.
+The VPC exists across all the Availability Zones in a region. while subnets are associated with a single AZ. The Stockholm (eu-north-1) region has three AZs and we need one public (to access the internet) and one private subnet (for internal stuff like databases) in 2 AZs to keep things simple.
 
 ![Subnets](imgs/subnets.png)
 
