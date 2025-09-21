@@ -1,6 +1,6 @@
-# Networking Architecture with terraform
+# Networking Architecture with Terraform
 
-![Status](https://img.shields.io/badge/status-In%20Development-yellow)
+![Status](https://img.shields.io/badge/status-Completed-brightgreen)
 
 ## 🚀 Project Overview
 
@@ -20,34 +20,38 @@ This network is designed from the ground up using **Terraform**, ensuring consis
 
 ### Key Components
 
-- **Virtual Private Cloud (VPC)**  
-  Creates a private network where all AWS resources reside.
-
-- **Subnets**  
-  Divides the network into **public** and **private** zones.
-
-- **Internet Gateway**  
-  Enables external communication for public resources.
-
-- **Route Tables**  
-  Directs traffic flow between subnets and external networks.
-
-- **Security Groups**  
-  Acts as virtual firewalls for controlling inbound and outbound traffic.
+- **Virtual Private Cloud (VPC)** – Private network for AWS resources  
+- **Subnets** – Divided into public and private zones  
+- **Internet Gateway** – Enables internet access for public subnets  
+- **Route Tables** – Manages traffic routing within the network  
+- **Security Groups** – Controls traffic with virtual firewalls  
 
 ---
 
 ## 🧠 Key Learning Objectives
 
-- Practice **Infrastructure as Code (IaC)** using Terraform
-- Understand core AWS **networking components**
-- Implement **segmentation and access control** using best practices
-- Develop repeatable, scalable network deployments
+- Practice **Infrastructure as Code (IaC)** using Terraform  
+- Understand core AWS **networking components**  
+- Implement **segmentation and access control**  
+- Develop repeatable, scalable network deployments  
 
 ---
 
 ## ✅ Outcome
 
-By the end of this project, I want have a well-structured, secure AWS network architecture deployed entirely through Terraform, ready for cloud workloads, real-world deployment scenarios, or extension into full-stack environments.
+This project results in a **secure, modular AWS network architecture** fully deployed via Terraform. It’s suitable for cloud workloads, extension into full-stack environments, or showcasing Terraform proficiency.
 
 ---
+
+## 📌 Notes
+All infrastructure was deployed using Terraform CLI.
+AWS resources have been validated and cleaned up post-deployment.
+Project tested in eu-north-1, Terraform v1.13.3.
+
+---
+
+## 🔗 Resources
+
+- [Terraform Docs](https://developer.hashicorp.com/terraform/docs)  
+- [AWS VPC Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/)
+
