@@ -80,7 +80,22 @@ We have already associated this IG with the VPC we created before by specifying 
 
 ![Internet Gateway](imgs/igw2.png)
 
+
+
 ## Step 4: Create a Second Route Table
+
+We already know that when a VPC is created, a main route table is created as well. The main route table is responsible for enabling the flow of traffic within the VPC.
+
+![Route tables](imgs/rt.png)
+
+The screenshot above shows the main route table and that there is no explicit association of any subnet to this route table. However, if you scroll down, all the subnets are associated implicitly. This is the default setting.
+
+![Route tables](imgs/rt1.png)
+
+At this moment, even though the subnets are called Public and Private, they are all private. To make the subnets named “Public” public, we have to create routes using IGW which will enable the traffic from the Internet to access these subnets.
+
+As a best practice, we create a second route table and associate it with the same VPC as shown in the below resource block. Note that we have also specified the route to the internet (0.0.0.0/0) using our IGW.
+
 
 ```hcl
 resource "aws_route_table" "public_rt" {
