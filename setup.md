@@ -33,7 +33,7 @@ This project uses:
 
 Open your terminal and run:
 
-![Project Folder](imgs/projectvpc.png)
+![Project Folder](imgs/vpc.dir.png)
 
 ## Step 2: Create a Terraform config file
 
