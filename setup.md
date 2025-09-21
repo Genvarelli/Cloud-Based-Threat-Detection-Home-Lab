@@ -98,6 +98,10 @@ As a best practice, we create a second route table and associate it with the sam
 
 ![Route tables](imgs/rt2.png)
 
+![rt-igw plan and apply](imgs/p-a.png)
+
+![rt-igw plan and apply](imgs/p-a1.png)
+
 Verify the creation of the second route table as below and the note the route that enables internet traffic.
 
 ![Route tables](imgs/rt3.png)
@@ -140,3 +144,4 @@ resource "aws_security_group" "public_sg" {
 }
 
 ```
+Verify the creation of the security Group.
