@@ -29,9 +29,23 @@ This project uses:
 
 ---
 
+## Step 1: Create a Project Folder
+
+Open your terminal and run:
+
+![Project Folder](imgs/projectvpc.png)
+
+## Step 2: Create a Terraform config file
+
+Create a file called main.tf and another file called variables.tf inside ~/terraform-vpc and leave the files empty for now.
+
+![Project Folder](imgs/tfconfigfile.png)
+
 ## Step 1: Create Virtual Private Cloud (VPC)
 
-To begin with, we are going to start by defining our Virtual Private Cloud (VPC) resource in Terraform. To specify a range of IP addresses in a VPC, a Classless Inter-Domain Routing (CIDR) block needs to be provided. For this we want to use best practises by not hardcoding our scripts instead we will create a variable.tf file in which will hold our actual script lines and link them to the main script files. we have also provided a name tag for identification.
+To begin with, we are going to start by defining our Virtual Private Cloud (VPC) resource in Terraform. To specify a range of IP addresses in a VPC, a Classless Inter-Domain Routing (CIDR) block needs to be provided. We have also provided a name tag for identification.
+
+Create a file called vpc.tf inside ~/terraform-vpc. This is where we will paste this code:
 
 ```hcl
 resource "aws_vpc" "main" {
