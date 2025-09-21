@@ -123,7 +123,7 @@ resource "aws_security_group" "public_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.allowed_ssh_ip]  # Replace with your actual IP in the variable.tf file!
+    cidr_blocks = [var.allowed_ssh_ip]  # Replace with your actual IP in the variables.tf file!
   }
 
   ingress {
