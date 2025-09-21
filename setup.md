@@ -37,7 +37,7 @@ Open your terminal and run:
 
 ## Step 2: Create a Terraform config file
 
-Create a file called main.tf and another file called variables.tf inside ~/terraform-vpc and leave the files empty for now.
+Create a file called main.tf inside ~/terraform-vpc and leave the files empty for now.
 
 ![Project Folder](imgs/tfconfigfile.png)
 
@@ -47,15 +47,15 @@ To begin with, we are going to start by defining our Virtual Private Cloud (VPC)
 
 Create a file called vpc.tf inside ~/terraform-vpc. This is where we will paste this code:
 
-```hcl
-resource "aws_vpc" "main" {
-  cidr_block           = var.vpc_cidr
+![VPC](imgs/vpc.png)
+![VPC](imgs/vpc1.png)
+![VPC](imgs/vpc2.png)
+![VPC](imgs/vpc3.png)
+Since we are creating a VPC by applying this configuration a main route table and network ACL is also created. The VPC is also associated with pre-exisiting DHCP option set, as shown in the below screenshot. Take notes of this as we will need this info later.
 
-  tags = {
-    Name = "Project VPC"
-  }
-}
-```
+![VPC](imgs/vpcconfirm.png)
+
+
 
 ## Step 2: Create Subnets (Public and Private)
 
