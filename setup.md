@@ -22,7 +22,7 @@ resource "aws_vpc" "main" {
 data "aws_availability_zones" "available" {}
 
 resource "aws_subnet" "public" {
-  count             = 2
+  count             = var.public_subnet_count
   vpc_id            = aws_vpc.main.id
   cidr_block        = cidrsubnet(aws_vpc.main.cidr_block, 8, count.index)
   availability_zone = element(data.aws_availability_zones.available.names, count.index)
@@ -35,7 +35,7 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_subnet" "private" {
-  count             = 2
+  count             = var.private_subnet_net
   vpc_id            = aws_vpc.main.id
   cidr_block        = cidrsubnet(aws_vpc.main.cidr_block, 8, count.index + 2)
   availability_zone = element(data.aws_availability_zones.available.names, count.index)
@@ -46,6 +46,7 @@ resource "aws_subnet" "private" {
     Name = "private-subnet-${count.index}"
   }
 }
+
 ```
 
 ## Step 3: Set up Internet Gateway
@@ -97,7 +98,7 @@ resource "aws_security_group" "public_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["86.22.114.200/32"]  # Replace with your actual IP!
+    cidr_blocks = [var.allowed_ssh_ip]  # Replace with your actual IP!
   }
 
   ingress {
