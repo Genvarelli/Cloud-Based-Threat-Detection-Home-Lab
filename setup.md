@@ -53,6 +53,8 @@ terraform init
 
 ![Project Folder](imgs/terraforminit.png)
 
+---
+
 ## Step 3: Create Virtual Private Cloud (VPC)
 
 To begin, we’ll define our Virtual Private Cloud (VPC) in Terraform. A VPC needs a CIDR block, which is a range of IP addresses.
@@ -68,7 +70,7 @@ Since we are creating a VPC, AWS will also automatically create a main route tab
 
 ![VPC](imgs/vpcconfirm.png)
 
-
+---
 
 ## Step 4: Create Subnets (Public and Private)
 
@@ -96,7 +98,9 @@ These areas are spread across two different data centers (Availability Zones) to
 ![subnets](imgs/subnetslist.png)
 As shown above, we’ve successfully created 4 subnets.
 
-## Step 3: Set up Internet Gateway
+---
+
+## Step 5: Set up Internet Gateway
 
 Since we’re building public subnets, we need to give them access to the internet using an Internet Gateway (IGW).
 The resource block below shows the configuration used to create one:
@@ -108,9 +112,9 @@ Apply this configuration and verify the result:
 
 ![Internet Gateway](imgs/igw2.png)
 
+---
 
-
-## Step 4: Create a Second Route Table
+## Step 6: Create a Second Route Table
 
 When a VPC is created, a main route table is also created. This handles traffic within the VPC.
 
@@ -143,7 +147,9 @@ Now verify that your new route table exists and is correctly configured:
 
 ![Route tables](imgs/rt3.png)
 
-## Step 5: Create a Security Group
+---
+
+## Step 7: Create a Security Group
 
 Security Groups are like firewalls that control who can access what.
 
@@ -155,3 +161,9 @@ We create a new Security Group to allow only necessary traffic (e.g., SSH, HTTP,
 Verify the creation of the Security Group in the AWS Console:
 
 ![Sec groups](imgs/secgp1.png)
+
+---
+
+## 🎉 Setup Complete
+
+AWS network infrastructure is now successfully deployed using Terraform!
