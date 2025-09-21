@@ -62,6 +62,9 @@ Since we are creating a VPC by applying this configuration a main route table an
 The VPC exists across all the Availability Zones in a region. while subnets are associated with a single AZ. The Stockholm (eu-north-1) region has three AZs and we need one public (to access the internet) and one private subnet (for internal stuff like databases) in 2 AZs to keep things simple.
 
 ![Subnets](imgs/subnets.png)
+![Subnets](imgs/subnets1.png)
+![Subnets](imgs/subnets2.png)
+![Subnets](imgs/subnets3.png)
 
 This setup creates a private network in the cloud using AWS in the Stockholm region. Within this network, it creates two types of smaller areas: public areas that can connect to the internet, and private areas that are kept internal for things like databases or sensitive data. These areas are spread across two different buildings (called Availability Zones) to make sure everything keeps running even if one building has a problem. Each public and private area gets a unique section of the network, and everything is clearly labeled so it's easy to manage. The idea is to keep things organised, secure, and reliable even if we're only using part of what the region offers.
 
