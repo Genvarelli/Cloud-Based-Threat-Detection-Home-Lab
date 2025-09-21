@@ -9,7 +9,7 @@ variable "vpc_cidr" {
 variable "allowed_ssh_ip" {
   description = "IP address allowed for SSH access"
   type        = string
-  default     = "your.IP/32"  # Replace with your actual IP
+  default     = "86.22.114.200/32"  # Replace with your actual IP
 }
 
 variable "public_subnet_count" {
