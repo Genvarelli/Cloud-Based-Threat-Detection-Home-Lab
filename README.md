@@ -27,6 +27,7 @@ This network is designed from the ground up using **Terraform**, ensuring consis
 - **Security Groups** – Controls traffic with virtual firewalls  
 
 ---
+
 ## Prerequisites
 
 Before you start, it helps to have:
@@ -38,6 +39,17 @@ Before you start, it helps to have:
 
 ---
 
+## Technologies Used
+
+This project uses:
+
+- **AWS:** The cloud platform where the network runs
+- **Terraform:** The tool used to write and manage infrastructure as code
+- **VPC (Virtual Private Cloud):** To create private networks in AWS
+- **Security Groups:** Virtual firewalls controlling network traffic
+- **Internet Gateway & Route Tables:** To enable internet access and manage traffic flow
+
+---
 ## 🧠 Key Learning Objectives
 
 - Practice **Infrastructure as Code (IaC)** using Terraform  
