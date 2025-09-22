@@ -10,38 +10,19 @@ This project demonstrates how to build a **secure cloud network architecture** o
 - Managing secure access
 - Automating infrastructure with Infrastructure as Code (IaC)
 
-The goal is to gain practical experience with AWS networking and Terraform, while building a clean, professional cloud setup for learning and portfolio purposes.
+---
+
+## ✨ Features
+
+- **Virtual Private Cloud (VPC)** – Creates a logically isolated AWS network  
+- **Subnets** – Separated into public and private zones  
+- **Internet Gateway** – Provides internet access for public resources  
+- **Route Tables** – Manages traffic flow between network segments  
+- **Security Groups** – Virtual firewalls to control inbound/outbound traffic  
 
 ---
 
-## 🧱 Architecture Overview
-
-This network is designed from the ground up using **Terraform**, ensuring consistent, repeatable infrastructure deployment.
-
-### Key Components
-
-- **Virtual Private Cloud (VPC)** – Private network for AWS resources  
-- **Subnets** – Divided into public and private zones  
-- **Internet Gateway** – Enables internet access for public subnets  
-- **Route Tables** – Manages traffic routing within the network  
-- **Security Groups** – Controls traffic with virtual firewalls  
-
----
-
-## Prerequisites
-
-Before you start, it helps to have:
-
-- Basic knowledge of AWS services like VPCs, subnets, and security groups
-- Some experience with Terraform and how it works
-- Understanding of basic networking (IP addresses, routing, firewalls)
-- Access to the AWS CLI and an AWS account with the right permissions
-
----
-
-## Technologies Used
-
-This project uses:
+## 👨🏽‍💻 Tech Stack
 
 - **AWS:** The cloud platform where the network runs
 - **Terraform:** The tool used to write and manage infrastructure as code
@@ -50,21 +31,64 @@ This project uses:
 - **Internet Gateway & Route Tables:** To enable internet access and manage traffic flow
 
 ---
-## ✅ Key Takeaways
 
-This project results in a **secure, modular AWS network architecture** fully deployed via Terraform. It’s suitable for cloud workloads, extension into full-stack environments, or showcasing Terraform proficiency. It helped me:
+## 📦 Getting Started
 
-- Practice **Infrastructure as Code (IaC)** using Terraform  
-- Understand core AWS **networking components**  
-- Implement **segmentation and access control**  
-- Develop repeatable, scalable network deployments  
+### ✅ Prerequisites
+
+To get started, you should have:
+
+- Basic understanding of AWS services (VPC, subnets, security groups)  
+- Familiarity with Terraform syntax and workflow  
+- Knowledge of networking concepts (IP addresses, routing, firewalls)  
+- AWS CLI configured and access to an AWS account with the right permissions  
 
 ---
 
-## 📌 Notes
-All infrastructure was deployed using Terraform CLI.
-AWS resources have been validated and cleaned up post-deployment.
-Project tested in eu-north-1, Terraform v1.13.3.
+### 🛠️ Installation Notes
+
+- All infrastructure is deployed using the **Terraform CLI**  
+- Resources were tested in the `eu-north-1` region  
+- Project built and verified with **Terraform v1.13.3**  
+- AWS resources were properly cleaned up after deployment  
+
+---
+
+### 📖 Usage
+
+## Running the Terrform
+
+```bash
+# Initialize Terraform
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Preview changes
+terraform plan
+
+# Apply changes to deploy infrastructure
+terraform apply
+
+# Destroy infrastructure when done
+terraform destroy
+```
+
+---
+
+## ✅ Key Takeaways
+
+This project results in a modular, secure AWS network architecture, fully deployed using Terraform. It is ideal for:
+- Running cloud workloads
+- Expanding into full-stack cloud environments
+- Showcasing Terraform and AWS networking skills
+
+Through this project, I gained hands-on experience with:
+- Infrastructure as Code (IaC)
+- Core AWS networking components
+- Segmentation and access control strategies
+- Building scalable, repeatable infrastructure
 
 ---
 
@@ -72,4 +96,13 @@ Project tested in eu-north-1, Terraform v1.13.3.
 
 - [Terraform Docs](https://developer.hashicorp.com/terraform/docs)  
 - [AWS VPC Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/)
+  
+---
 
+## 🐛 Issues
+
+---
+
+## 📜 License
+
+Authored by © Genesis Phillips
