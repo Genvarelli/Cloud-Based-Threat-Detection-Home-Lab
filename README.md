@@ -27,6 +27,16 @@ This network is designed from the ground up using **Terraform**, ensuring consis
 - **Security Groups** – Controls traffic with virtual firewalls  
 
 ---
+## Prerequisites
+
+Before you start, it helps to have:
+
+- Basic knowledge of AWS services like VPCs, subnets, and security groups
+- Some experience with Terraform and how it works
+- Understanding of basic networking (IP addresses, routing, firewalls)
+- Access to the AWS CLI and an AWS account with the right permissions
+
+---
 
 ## 🧠 Key Learning Objectives
 
