@@ -4,9 +4,9 @@
 
 ## 🚀 Project Overview
 
-This project demonstrates how to build a **secure cloud network architecture** on AWS using **Terraform**. It focuses on foundational cloud networking principles and best practices, including:
+This project showcases the creation of a secure and scalable network architecture on AWS using Terraform. It highlights essential cloud networking principles such as:
 
-- Creating isolated network environments
+- Isolating network environments for enhanced security
 - Managing secure access
 - Automating infrastructure with Infrastructure as Code (IaC)
 
@@ -14,21 +14,21 @@ This project demonstrates how to build a **secure cloud network architecture** o
 
 ## ✨ Features
 
-- **Virtual Private Cloud (VPC)** – Creates a logically isolated AWS network  
-- **Subnets** – Separated into public and private zones  
-- **Internet Gateway** – Provides internet access for public resources  
-- **Route Tables** – Manages traffic flow between network segments  
-- **Security Groups** – Virtual firewalls to control inbound/outbound traffic  
+- Virtual Private Cloud (VPC): Establishes a secure, isolated network environment on AWS
+- Public and Private Subnets: Segments network resources for improved security and organisation
+- Internet Gateway: Enables internet connectivity for resources in public subnets
+- Route Tables: Directs network traffic efficiently between subnets and gateways
+- Security Groups: Acts as virtual firewalls to regulate inbound and outbound traffic 
 
 ---
 
 ## 👨🏽‍💻 Tech Stack
 
-- **AWS:** The cloud platform where the network runs
-- **Terraform:** The tool used to write and manage infrastructure as code
-- **VPC (Virtual Private Cloud):** To create private networks in AWS
-- **Security Groups:** Virtual firewalls controlling network traffic
-- **Internet Gateway & Route Tables:** To enable internet access and manage traffic flow
+- AWS: Cloud platform hosting the network infrastructure
+- Terraform: Infrastructure as Code tool for provisioning and managing resources
+- VPC & Subnets: Core components for network isolation and segmentation
+- Internet Gateway & Route Tables: Facilitate connectivity and direct network traffic
+- Security Groups: Provide network security controls
 
 ---
 
