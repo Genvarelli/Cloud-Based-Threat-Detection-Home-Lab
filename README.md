@@ -50,18 +50,14 @@ This project uses:
 - **Internet Gateway & Route Tables:** To enable internet access and manage traffic flow
 
 ---
-## 🧠 Key Learning Objectives
+## ✅ Key Takeaways
+
+This project results in a **secure, modular AWS network architecture** fully deployed via Terraform. It’s suitable for cloud workloads, extension into full-stack environments, or showcasing Terraform proficiency. It helped me:
 
 - Practice **Infrastructure as Code (IaC)** using Terraform  
 - Understand core AWS **networking components**  
 - Implement **segmentation and access control**  
 - Develop repeatable, scalable network deployments  
-
----
-
-## ✅ Outcome
-
-This project results in a **secure, modular AWS network architecture** fully deployed via Terraform. It’s suitable for cloud workloads, extension into full-stack environments, or showcasing Terraform proficiency.
 
 ---
 
