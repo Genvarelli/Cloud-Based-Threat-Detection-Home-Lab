@@ -47,7 +47,7 @@ To get started, you should have:
 
 ### 🛠️ Installation Notes
 
-- All infrastructure is deployed using the **Terraform CLI**  
+- All infrastructure is deployed using the **Terraform CLI & AWS CLI**  
 - Resources were tested in the `eu-north-1` region  
 - Project built and verified with **Terraform v1.13.3**  
 - AWS resources were properly cleaned up after deployment  
@@ -56,7 +56,7 @@ To get started, you should have:
 
 ### 📖 Usage
 
-## Running the Terrform
+## Running the Terraform
 
 ```bash
 # Initialize Terraform
@@ -100,6 +100,9 @@ Through this project, I gained hands-on experience with:
 ---
 
 ## 🐛 Issues
+
+Even though I'm new to terraform, setting it up on my Mac and connecting it to my AWS account was striaghtforward. Building this project was quite simple and straight forward as the documentation helped guide me on how and where to start.
+Also, I later found out that I could have completed this project within my VSCode and I didnt have to be working from my Mac terminal(I'm glad I know this now for next time😅)
 
 ---
 
