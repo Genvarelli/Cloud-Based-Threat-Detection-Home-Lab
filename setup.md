@@ -1,4 +1,4 @@
-# AWS Networking Setup with Terraform
+# Networking Configuration
 
 This document explains the key Terraform configuration files used to build the AWS network infrastructure.
 
