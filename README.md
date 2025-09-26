@@ -35,8 +35,6 @@ It highlights essential cloud networking principles such as:
 
 ## 📦 Getting Started
 
-### ✅ Prerequisites
-
 To get started, you should have:
 
 - Basic understanding of AWS services (VPC, subnets, security groups)  
@@ -46,7 +44,7 @@ To get started, you should have:
 
 ---
 
-### 🛠️ Installation Notes
+## 🛠️ Installation Notes
 
 - All infrastructure is deployed using the **Terraform CLI & AWS CLI**  
 - Resources were tested in the `eu-north-1` region  
@@ -55,9 +53,9 @@ To get started, you should have:
 
 ---
 
-### 📖 Usage
+## 📖 Usage
 
-## Running the Terraform
+### Running the Terraform
 
 ```bash
 # Initialise Terraform
