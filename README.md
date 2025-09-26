@@ -59,7 +59,7 @@ To get started, you should have:
 ## Running the Terraform
 
 ```bash
-# Initialize Terraform
+# Initialise Terraform
 terraform init
 
 # Validate the configuration
