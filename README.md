@@ -102,6 +102,7 @@ Through this project, I gained hands-on experience with:
 ## 🐛 Issues
 
 Even though I'm new to terraform, setting it up on my Mac and connecting it to my AWS account was striaghtforward. Building this project was quite simple and straight forward as the documentation helped guide me on how and where to start.
+<br>
 Also, I later found out that I could have completed this project within my VSCode and I didnt have to be working from my Mac terminal(I'm glad I know this now for next time😅)
 
 ---
