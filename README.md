@@ -14,21 +14,21 @@ This project showcases the creation of a secure and scalable network architectur
 
 ## ✨ Features
 
-- Virtual Private Cloud (VPC): Establishes a secure, isolated network environment on AWS
-- Public and Private Subnets: Segments network resources for improved security and organisation
-- Internet Gateway: Enables internet connectivity for resources in public subnets
-- Route Tables: Directs network traffic efficiently between subnets and gateways
-- Security Groups: Acts as virtual firewalls to regulate inbound and outbound traffic 
+- **Virtual Private Cloud (VPC):** Establishes a secure, isolated network environment on AWS
+- **Public and Private Subnets:** Segments network resources for improved security and organisation
+- **Internet Gateway:** Enables internet connectivity for resources in public subnets
+- **Route Tables:** Directs network traffic efficiently between subnets and gateways
+- **Security Groups:** Acts as virtual firewalls to regulate inbound and outbound traffic 
 
 ---
 
 ## 👨🏽‍💻 Tech Stack
 
-- AWS: Cloud platform hosting the network infrastructure
-- Terraform: Infrastructure as Code tool for provisioning and managing resources
-- VPC & Subnets: Core components for network isolation and segmentation
-- Internet Gateway & Route Tables: Facilitate connectivity and direct network traffic
-- Security Groups: Provide network security controls
+- **AWS:** Cloud platform hosting the network infrastructure
+- **Terraform:** Infrastructure as Code tool for provisioning and managing resources
+- **VPC & Subnets:** Core components for network isolation and segmentation
+- **Internet Gateway & Route Tables:** Facilitate connectivity and direct network traffic
+- **Security Groups:** Provide network security controls
 
 ---
 
