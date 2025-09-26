@@ -4,7 +4,8 @@
 
 ## 🚀 Project Overview
 
-This project showcases the creation of a secure and scalable network architecture on AWS using Terraform. It highlights essential cloud networking principles such as:
+This project showcases the creation of a secure and scalable network architecture on AWS using Terraform.<br>
+It highlights essential cloud networking principles such as:
 
 - Isolating network environments for enhanced security
 - Managing secure access
